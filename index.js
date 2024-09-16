@@ -21,7 +21,7 @@ const transport = {
 const transporter = nodemailer.createTransport(transport);
 
 // Serve the static files from the React app (assuming your build is in the 'dist' folder)
-app.use(express.static(path.join(__dirname, 'dist')));
+// app.use(express.static(path.join(__dirname, 'dist')));
 
 // API route to handle form submissions
 app.post('/api/submit-query', async (req, res) => {
@@ -56,9 +56,9 @@ app.post('/api/submit-query', async (req, res) => {
 });
 
 // Catch all other routes and serve the React app's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
