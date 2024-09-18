@@ -1,11 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
+const cors =require("cors")
 
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(cors({origin:"*"}))
 
 // Create a transporter using SMTP
 const transport = {
